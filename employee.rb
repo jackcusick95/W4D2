@@ -11,7 +11,9 @@ class Employee
         @salary * multiplier
     end
 
-    
-
 end
+
+shawna = Employee.new("Shawna", "TA", 12000, "Darren")
+david = Employee.new("David", "TA", 10000, "Darren")
+darren = Employee.new()
 
