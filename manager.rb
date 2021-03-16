@@ -8,7 +8,7 @@ class Manager < Employee
     end
 
     def total_employee_salary
-
+        
     end
     
     def bonus(multiplier)
