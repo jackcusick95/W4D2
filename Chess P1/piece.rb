@@ -1,3 +1,4 @@
+
 class Piece
 
     def initialize(color, board, pos)
@@ -22,7 +23,7 @@ class Piece
         @pos = value 
     end 
 
-    def move_into_check?(end)
+    def move_into_check?(end_pos)
 
     end 
 
