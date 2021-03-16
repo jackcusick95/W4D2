@@ -4,12 +4,6 @@ class Manager < Employee
 
     def initialize
         @employees = []
-<<<<<<< HEAD
-        super(@salary)
-    end
-
-end
-=======
         super(@salary, @name, @title, @boss)
     end
 
@@ -30,4 +24,3 @@ ned = Manager.new
 p ned.bonus(5)
 p darren.bonus(4)
 p david.bonus(3)
->>>>>>> 4fa1478a4b1a7327f7df337beb2efe0a116ac119
