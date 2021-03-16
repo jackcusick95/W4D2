@@ -7,20 +7,24 @@ class Board
     end 
 
     def [](pos)
-        row, col = pos
-        @rows[row][col] = pos
+        row = pos[0]
+        col = pos[1]
+        @rows[row][col] 
     end 
 
     def []=(pos, val)
-        @rows[pos] = val
+         row = pos[0]
+         col = pos[1]
+        @rows[row][col] = val
     end 
 
     def move_piece(start_pos, end_pos)
         if @rows[start_pos] == :O
             raise "There is no piece here!"
-        end
-        if valid_pos?(end_pos) == false
+        elsif valid_pos?(end_pos) == false
             raise "That piece is NOT on the Board!"
+        else 
+            p "time to write you move function"
         end
     end 
 
