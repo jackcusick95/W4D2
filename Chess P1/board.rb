@@ -3,29 +3,31 @@ require_relative 'piece.rb'
 class Board
 
     def initialize
-        @rows = Array.new(8) { Array.new(8,:O) }
+        @grid = Array.new(8) { Array.new(8,:O) }
     end 
 
     def [](pos)
-        row = pos[0]
-        col = pos[1]
-        @rows[row][col] 
+        row, col = pos
+        @grid[row][col] 
     end 
 
     def []=(pos, val)
-         row = pos[0]
-         col = pos[1]
-        @rows[row][col] = val
+        row, col = pos 
+        @grid[row][col] = val
     end 
 
     def move_piece(start_pos, end_pos)
-        if @rows[start_pos] == :O
-            raise "There is no piece here!"
-        elsif valid_pos?(end_pos) == false
-            raise "That piece is NOT on the Board!"
+       
+        if valid_pos?(start_pos) && valid_pos?(end_pos)
+            raise "There is no piece here!" unless self[start_pos] != :O
+            piece = self[start_pos]
+            self[end_pos] = piece
+            self[start_pos] = :O
         else 
-            p "time to write you move function"
-        end
+            raise "We need play within the board boundaries!!"
+        end 
+        
+
     end 
 
     def valid_pos?(pos)
